@@ -328,6 +328,23 @@ titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
     return @"删除这行";
     
 }
+
+/**
+ *  移动row时执行
+ *
+ *  @param tableView tableView
+ *  @param indexPath indexPath
+ *
+ *  @return NSString
+ */
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath;
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+    }
+}
+
 /**
  *  开始移动row时执行
  *
@@ -396,5 +413,7 @@ titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
     }
     return proposedDestinationIndexPath;
 }
+
+
 
 @end
